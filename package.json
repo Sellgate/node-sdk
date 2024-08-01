@@ -1,0 +1,42 @@
+{
+  "name": "sellgate",
+  "version": "1.0.0",
+  "description": "A sellgate API wrapper",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "crypto",
+    "cryptocurrency",
+    "payments",
+    "sellgate",
+    "checkout",
+    "payment",
+    "bitcoin",
+    "litecoin",
+    "ethereum",
+    "bitcoin-cash",
+    "cryptocurrencies",
+    "polygon",
+    "tron",
+    "binance-smart-chain",
+    "erc20",
+    "bep20"
+  ],
+  "author": "Sellgate <support@sellgate.io>",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  }
+}
