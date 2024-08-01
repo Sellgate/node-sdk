@@ -22,10 +22,7 @@
     "bitcoin-cash",
     "cryptocurrencies",
     "polygon",
-    "tron",
-    "binance-smart-chain",
-    "erc20",
-    "bep20"
+    "erc20"
   ],
   "author": "Sellgate <support@sellgate.io>",
   "license": "ISC",
