@@ -4,6 +4,24 @@ import { CheckoutRequest, AddressRequest, ApiResponse } from './types';
 export class sellgate {
   private static readonly baseUrl: string = 'https://api.sellgate.io/v1';
 
+  /**
+   * Creates a checkout session.
+   *
+   * @returns A URL to the checkout, a success boolean and a message.
+   *
+   * @example
+   * const checkout = await sellgate.createCheckout({
+   *  price: '99.99',
+   *  crypto: [
+   *    {
+   *      network: 'ETH',
+   *      coin: 'ETH',
+   *      address: '0xB1DA646D1cD015d205a99198e809724D5C78109d',
+   *    },
+   *  ],
+   * });
+   * console.log(checkout.url)
+   */
   static async createCheckout(request: CheckoutRequest): Promise<ApiResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/checkout`, {
@@ -28,6 +46,24 @@ export class sellgate {
     }
   }
 
+  /**
+   * Creates a crypto address for payments.
+   *
+   * @returns A success boolean, a receive_address (address for payment), a payout_address (your address) and the webhook url.
+   *
+   * @example
+   * const address = await sellgate.createAddress({
+   *  price: '99.99',
+   *  crypto: [
+   *    {
+   *      network: 'ETH',
+   *      coin: 'ETH',
+   *      address: '0xB1DA646D1cD015d205a99198e809724D5C78109d',
+   *    },
+   *  ],
+   * });
+   * console.log(address.receive_address)
+   */
   static async createAddress(request: AddressRequest): Promise<ApiResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/address`, {
