@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 import { CheckoutRequest, AddressRequest, ApiResponse } from './types';
 
-export class Sellgate {
+class Sellgate {
   private baseUrl: string;
 
   constructor(baseUrl: string = 'https://api.sellgate.io/v1') {
@@ -93,4 +93,5 @@ export class Sellgate {
   }
 }
 
-export const sellgate = new Sellgate();
+const sellgate = new Sellgate();
+export { sellgate };

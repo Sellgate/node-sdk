@@ -1,4 +1,4 @@
-import { sellgate } from './client';
+import { sellgate } from './index';
 import { CheckoutRequest, AddressRequest } from './types';
 
 describe('SellgateClient', () => {
