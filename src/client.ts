@@ -1,8 +1,12 @@
 const fetch = require('node-fetch');
 import { CheckoutRequest, AddressRequest, ApiResponse } from './types';
 
-export const sellgate = {
-  baseUrl: 'https://api.sellgate.io/v1',
+export class Sellgate {
+  private baseUrl: string;
+
+  constructor(baseUrl: string = 'https://api.sellgate.io/v1') {
+    this.baseUrl = baseUrl;
+  }
 
   /**
    * Creates a checkout session.
@@ -44,7 +48,7 @@ export const sellgate = {
       console.error("Fetch error:", error);
       throw error;
     }
-  },
+  }
 
   /**
    * Creates a crypto address for payments.
@@ -88,3 +92,5 @@ export const sellgate = {
     }
   }
 }
+
+export const sellgate = new Sellgate();
