@@ -21,6 +21,7 @@ describe('SellgateClient', () => {
 
     const response = await sellgate.createCheckout(request);
     expect(response.success).toBe(true);
+    expect(response.url).toBeTruthy();
   });
 
   it('should create an address', async () => {
@@ -35,5 +36,6 @@ describe('SellgateClient', () => {
 
     const response = await sellgate.createAddress(request);
     expect(response.success).toBe(true);
+    expect(response.receive_address).toBeTruthy();
   });
 });

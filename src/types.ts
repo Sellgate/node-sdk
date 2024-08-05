@@ -21,5 +21,10 @@ export interface AddressRequest {
 
 export interface ApiResponse {
   success: boolean;
+  message: string;
+  url: string;
+  receive_address: string;
+  payout_address: string;
+  webhook: string;
   data: any;
 }

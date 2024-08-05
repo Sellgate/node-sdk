@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
 import { CheckoutRequest, AddressRequest, ApiResponse } from './types';
 
-export class sellgate {
-  private static readonly baseUrl: string = 'https://api.sellgate.io/v1';
+export const sellgate = {
+  baseUrl: 'https://api.sellgate.io/v1',
 
   /**
    * Creates a checkout session.
@@ -22,7 +22,7 @@ export class sellgate {
    * });
    * console.log(checkout.url)
    */
-  static async createCheckout(request: CheckoutRequest): Promise<ApiResponse> {
+  async createCheckout(request: CheckoutRequest): Promise<ApiResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/checkout`, {
         method: 'POST',
@@ -44,7 +44,7 @@ export class sellgate {
       console.error("Fetch error:", error);
       throw error;
     }
-  }
+  },
 
   /**
    * Creates a crypto address for payments.
@@ -64,7 +64,7 @@ export class sellgate {
    * });
    * console.log(address.receive_address)
    */
-  static async createAddress(request: AddressRequest): Promise<ApiResponse> {
+  async createAddress(request: AddressRequest): Promise<ApiResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/address`, {
         method: 'POST',
